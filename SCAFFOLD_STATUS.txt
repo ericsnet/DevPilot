@@ -1,0 +1,5 @@
+DevPilot Foundation scaffold.
+Published to the public GitHub repository: https://github.com/ericsnet/DevPilot
+Initial repository structure is present on the main branch.
+Docker Compose, Dev Container, frontend build and full integration tests have not yet been verified in the target environment.
+Next: verify startup on Windows/WSL2, then add database migrations and identity/multi-tenancy foundations.

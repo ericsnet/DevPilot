@@ -15,7 +15,6 @@ services:
 
   redis:
     image: redis:7-alpine
-    ports: ["6379:6379"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -29,6 +28,12 @@ services:
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-devpilot}:${POSTGRES_PASSWORD:-devpilot-local-only}@db:5432/${POSTGRES_DB:-devpilot}
       REDIS_URL: redis://redis:6379/0
       CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+      GITHUB_REDIRECT_URI: ${GITHUB_REDIRECT_URI:-http://localhost:8000/api/v1/integrations/github/callback}
+      GITHUB_COOKIE_SECURE: ${GITHUB_COOKIE_SECURE:-false}
+      GITHUB_COOKIE_SAMESITE: ${GITHUB_COOKIE_SAMESITE:-lax}
     ports: ["${BACKEND_PORT:-8000}:8000"]
     volumes: [".:/workspace"]
     depends_on:

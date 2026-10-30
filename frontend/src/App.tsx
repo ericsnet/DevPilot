@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Activity, Bot, Boxes, CheckCircle2, ChevronDown, Code2, ExternalLink, GitBranch, LayoutDashboard, ListTodo, Moon, Search, Settings2, ShieldCheck, Sun, Workflow } from "lucide-react";
+import GitHubIntegration from "./GitHubIntegration";
 
 type Theme = "dark" | "light";
 type Language = "en" | "es";
@@ -34,6 +35,7 @@ export default function App() {
   const [theme, setTheme] = useState<Theme>("dark");
   const [language, setLanguage] = useState<Language>("es");
   const [api, setApi] = useState<ApiState>("not-configured");
+  const apiBase = (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\\/$/, "");
   const [query, setQuery] = useState("");
   const [active, setActive] = useState("overview");
   const t = labels[language];

@@ -62,4 +62,4 @@ No subas archivos `.env`, secretos OAuth, tokens de acceso ni claves de API. Las
 
 ## Licencia y uso
 
-Copyright (c) 2026 ericsnet. Todos los derechos reservados. La visibilidad pública del repositorio permite inspeccionar el código, pero no concede permiso para copiarlo, modificarlo, distribuirlo, sublicenciarlo ni explotarlo comercialmente sin autorización previa por escrito, salvo los derechos que la legislación aplicable no permita restringir. Consulta el archivo LICENSE.
+El software es propietario. La visibilidad pública del repositorio permite inspeccionar el código, pero no concede permiso para copiarlo, modificarlo, distribuirlo, sublicenciarlo ni explotarlo comercialmente sin autorización previa por escrito, salvo los derechos que la legislación aplicable no permita restringir. Consulta el archivo LICENSE para ver el titular de los derechos y las condiciones completas.

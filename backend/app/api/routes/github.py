@@ -43,15 +43,18 @@ def connect_github():
 
 @router.get("/callback")
 def github_callback(code: str | None = None, state: str | None = None, error: str | None = None):
-    if error:
-        return RedirectResponse(_frontend_redirect("denied"), status_code=302)
-    if not code or not state:
+    if not state:
         return RedirectResponse(_frontend_redirect("invalid"), status_code=302)
 
     state_key = f"devpilot:github:oauth-state:{state}"
     if redis_client.get(state_key) != "pending":
         return RedirectResponse(_frontend_redirect("invalid"), status_code=302)
     redis_client.delete(state_key)
+
+    if error:
+        return RedirectResponse(_frontend_redirect("denied"), status_code=302)
+    if not code:
+        return RedirectResponse(_frontend_redirect("invalid"), status_code=302)
 
     try:
         with httpx.Client(timeout=15.0) as http:

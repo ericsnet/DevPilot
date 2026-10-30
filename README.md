@@ -54,4 +54,4 @@ Never commit .env files, OAuth secrets, access tokens, or provider API keys. Kee
 - .github/workflows/ — CI workflow
 
 ## License and usage
-Copyright (c) 2026 DevPilot. All rights reserved. Public visibility is for inspection only. No permission is granted to copy, modify, distribute, sublicense, or commercially exploit this software without prior written permission, except where applicable law provides otherwise. See LICENSE.
+This software is proprietary. Public visibility is for inspection only and does not grant permission to copy, modify, distribute, sublicense, or commercially exploit it without prior written permission, except where applicable law provides otherwise. See LICENSE for the copyright notice and full terms.
